@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <ul class="nav nav-pills nav-fill">
+            <li class="navbar-brand"><a class="nav-link active" href="{% url 'index' %}">BRAND</a> </li>
+             <li class="navbar-item"><a class="nav-link" href="{% url 'admin:index' %}">Admin</a> </li>
+             <li class="navbar-item"><a class="nav-link" href="{% url 'basic_app:other' %}">Other</a> </li>
+
+
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    {% block body_block %}
+
+<!--        anything outside of this will not be included when extending-->
+    {%endblock%}
+</div>
+
+</body>
+</html>
